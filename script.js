@@ -98,6 +98,9 @@ function calcularTDEE() {
     }   
     
     res3.innerHTML = `Com base em seu objetivo: <strong>${tdee.toFixed(2)}</strong> kcal`;
+
+    document.getElementById('dieta').style.display = 'block';
+    document.getElementById('calc3').style.display = 'none';
     
 
 
@@ -123,3 +126,4 @@ function calcular() {
         res.innerHTML = `O total de calorias é: <strong>${resultado}</strong> kcal`;
     }
 }
+
