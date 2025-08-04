@@ -63,6 +63,7 @@ function calcularTDEE() {
     const objetivo = document.getElementById('objetivo');
     const peso = parseFloat(document.getElementById('peso').value);
     const res3 = document.getElementById('res3');
+    const dias = Number(document.getElementById('dias'))
     let taxa = tmb(); // Chama a função tmb para obter o TMB
 
     if (frequencia.value.length <= 0 || 
@@ -88,7 +89,7 @@ function calcularTDEE() {
             met = 1.0; // Valor de Repouso
     }
 
-    let caloriasAtividade = (met * peso * duracao) / 7; // Calcular calorias gasta na atividade por dia
+    let caloriasAtividade = (met * peso * duracao * dias) / 7; // Calcular calorias gasta na atividade por dia
     let tdee = taxa + caloriasAtividade; // Calcular TDEE
 
     if (objetivo.value === 'Perder Peso') {
