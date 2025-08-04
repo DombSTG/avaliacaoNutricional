@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Calorias</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Calorias</h1>
+    </header>
+    <section>
+        <div id="valores">
+            <p>
+                Quantidade de Proteinas (g):
+                <input type="number" name="txtproteinas" id="txtproteinas">
+            </p>
+            <p>
+                Quantidade de Carboidratos (g):
+                <input type="number" name="txtcarbo" id="txtcarbo">
+            </p>
+            <p>
+                Quantidade de Gordura (g):
+                <input type="number" name="txtg" id="txtg">
+            </p>
+        </div>
+        <div id="calc">
+        <input type="button" value="Calcular" onclick="calcular()">
+        </div>
+        <div id="res">
+            Resultado:
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
