@@ -1,3 +1,11 @@
+/* Correções futuras
+    - Botão de calcular novamente
+    - Anti-burro no horario de treino
+    - Explicar melhor o resultado o TDEE
+    - Se a frequencia é Sedentaria não abre as outras opções de digitação
+    - Não sumir o botao e nao perder o formulário
+*/
+
 // Função para converter a altura de metros para centímetros
 // ou validar se já está em centímetros, retornando 0 em caso de erro
 function converter() {
