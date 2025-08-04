@@ -63,7 +63,7 @@ function calcularTDEE() {
     const objetivo = document.getElementById('objetivo');
     const peso = parseFloat(document.getElementById('peso').value);
     const res3 = document.getElementById('res3');
-    const dias = Number(document.getElementById('dias'))
+    const dias = Number(document.getElementById('dias').value)
     let taxa = tmb(); // Chama a função tmb para obter o TMB
 
     if (frequencia.value.length <= 0 || 
