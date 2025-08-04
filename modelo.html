@@ -3,15 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validador de Calorias</title>
+    <title>Avaliação Nutricional</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
-        <h1>Calculadora de Calorias</h1>
+        <h1>Avaliação Nutricional</h1>
     </header>
     <section>
-        <div id="valores">
+        <div id="intro">
+            <p>Taxa de Metabolismo Basal</p>
+        </div>
+        <div id="valores1">
+            <p>Preencha os campos abaixo:</p>
+            <p>
+                Nome:
+                <input type="text" name="Nome" id="nome">
+            </p>
+            <p>
+                Idade:
+                <input type="number" name="Idade" id="idade">
+            </p>
+            <p>
+                Altura (cm):
+                <input type="number" name="Altura" id="altura">
+            </p>
+            <p>
+                Peso:
+                <input type="number" name="Peso" id="peso">
+            </p>
+            <p>
+                Sexo:
+                <select name="Sexo" id="sexo">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                </select>
+        </div>
+        <div id="calc1">
+            <input type="button" value="Calcular" onclick="tmb()">
+        </div>
+        <div id="res1">
+            Resultado:
+        </div>
+        <div id="intro">
+            <p>Gasto Calórico Total Diário</p>
+        </div>
+                
+
+
+
+
+
+
+
+
+
+
+
+        <div id="valores2">
             <p>
                 Quantidade de Proteinas (g):
                 <input type="number" name="txtproteinas" id="txtproteinas">
@@ -25,10 +74,10 @@
                 <input type="number" name="txtg" id="txtg">
             </p>
         </div>
-        <div id="calc">
+        <div id="calc2">
         <input type="button" value="Calcular" onclick="calcular()">
         </div>
-        <div id="res">
+        <div id="res2">
             Resultado:
         </div>
     </section>
