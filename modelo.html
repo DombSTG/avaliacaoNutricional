@@ -45,9 +45,48 @@
         <div id="res1">
             Resultado:
         </div>
+        <div id="gastoCalorico" style="display: none;">
         <div id="intro">
             <p>Gasto Calórico Total Diário</p>
         </div>
+        <div id="valores3"> <!--Valores 3 antes do valores 2 por motivos de chapei-->
+            <p>Frequencia de atividade física
+                <select name="freq" id="freq">
+                <option value="Sedentario">Sedentário</option>
+                <option value="Levemente ativo">Levemente ativo</option>
+                <option value="Moderadamente ativo">Moderadamente ativo</option>
+                <option value="Intenso">Intenso</option>
+                </select>
+            </p>
+            <p>
+                Tipo de atividade física:
+                <select name="Tipo" id="tipo">
+                    <option value="Musculação">Musculação</option>
+                    <option value="Corrida">Corrida</option>
+                    <option value="Caminhada">Caminhada</option>
+                </select>
+            </p>
+            <p>
+                Duração semanal dos exercícios (em horas):
+                <input type="number" name="duracao" id="duracao">
+            </p>
+            <p>
+                Objetivo:
+                <select name="Objetivo" id="objetivo">
+                    <option value="Perder Peso">Perder Peso</option>
+                    <option value="Manter Peso">Manter Peso</option>
+                    <option value="Ganhar Massa">Ganhar Massa</option>
+                </select>
+            </p>
+            <div id="res3">
+                Resultado:
+            </div>
+        </div>
+            <div id="calc3"> <!--calc3 antes do valores 2 por motivos de chapei-->
+            <input type="button" value="Calcular" onclick="calcularTDEE()">
+            </div>
+        </div>
+        
                 
 
 
