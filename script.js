@@ -1,19 +1,29 @@
-funcion tmb() {
+function converter() {
+    let alturaInput = document.getElementById('altura').value;
+    return parseFloat(alturaInput.replace(',', '.'));
+
+}
+
+
+
+function tmb() {
     var nome = document.getElementById('nome');
     var idade = document.getElementById('idade');
-    var altura = document.getElementById('altura');
     var peso = document.getElementById('peso');
     var sexo = document.getElementById('sexo');
     var res1 = document.getElementById('res1');
 
-    if (nome.value.length <== 0 || idade.value.length <== 0 || altura.value.length <== 0 || peso.value.length <== 0 || sexo.value.length <== 0) {
+    let altura = converter();
+
+    if (nome.value.length <= 0 || idade.value.length <= 0 || altura.value.length <= 0 || peso.value.length <= 0 || sexo.value.length <= 0) {
         window.alert('[ERRO] Verifique os dados e tente novamente!');
     } else if ( sexo.value == 'Masculino') {
-        var resultado = ((10 * Number(peso.value)) + (6.25 * Number(altura.value)) - (5 * Number(idade.value)) + 5);
+        var resultado = ((10 * Number(peso.value)) + (6.25 * altura) - (5 * Number(idade.value)) + 5);
         res1.innerHTML = `Olá <strong>${nome.value}</strong>, seu TMB é: <strong>${resultado.toFixed(2)}</strong> kcal`;
-    } else 
-        var resultado = ((10 * Number(peso.value)) + (6.25 * Number(altura.value)) - (5 * Number(idade.value)) - 161);
+    } else {
+        var resultado = ((10 * Number(peso.value)) + (6.25 * altura) - (5 * Number(idade.value)) - 161);
         res1.innerHTML = `Olá <strong>${nome.value}</strong>, seu TMB`
+    }
 }
 
 
