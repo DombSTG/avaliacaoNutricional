@@ -1,9 +1,9 @@
 /* Correções futuras
     - Botão de voltar
     - Anti-burro no horario de treino
-    - Se a frequencia é Sedentaria não abre as outras opções de digitação
+    - Se a frequencia é Sedentaria não abre as outras opções de digitação - CONCLUIDO
     - Não sumir o botao e nao perder o formulário
-    - Independente da frequencia ele nao altera o resultado, trocar pra selecao perguntando se pratica atividade
+    - Independente da frequencia ele nao altera o resultado, trocar pra selecao perguntando se pratica atividade - CONCLUIDO
 */
 
 // Função para converter a altura de metros para centímetros
@@ -66,15 +66,16 @@ function tmb() {
 
 function ativarForm() {
     let fativ = document.getElementsByName('ativ')
-    const res3 = document.getElementById('res3')
+    const res4 = document.getElementById('res4')
+    let taxa = tmb()
 
     if (fativ[0].checked) {
         document.getElementById('valores3').style.display = 'block'
-        document.getElementById('calc3').style.display = 'block'
+        document.getElementById('avancar').style.display = 'none'
     } else if (fativ[1].checked) {
-        res3.innerHTML = `Seu gasto energético diário é <strong>${taxa.toFixed(2)}</strong> kcal (sem atividade física)`;
+        res4.innerHTML = `Seu gasto energético diário é <strong>${taxa.toFixed(2)}</strong> kcal (sem atividade física)`;
         document.getElementById('dieta').style.display = 'block';
-        document.getElementById('calc3').style.display = 'none';
+        document.getElementById('avancar').style.display = 'none'
     }
 }
 
@@ -114,11 +115,11 @@ function calcularTDEE() {
     let caloriasAtividade = (met * peso * duracao * dias) / 7; // Calcular calorias gasta na atividade por dia
     let tdee = taxa + caloriasAtividade; // Calcular TDEE
 
-    if (objetivo.value === 'Perder Peso') {
+/*    if (objetivo.value === 'Perder Peso') {
         tdee -= 500; // Reduzir 500 kcal para perda de peso
     } else if (objetivo.value === 'Ganhar Massa') {
         tdee += 500; // Aumentar 500 kcal para ganho de massa
-    }   
+    }   */
     
     res3.innerHTML = `Seu gasto energético diário é <strong>${tdee.toFixed(2)}</strong> kcal`;
 

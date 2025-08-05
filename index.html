@@ -55,7 +55,10 @@
                 <label for="sim">Sim</label>
                 <input type="radio" name="ativ" id="nao">
                 <label for="nao">Não</label>
-            </p>
+                </p>
+        <div id="res4">
+            <!--Aqui vai o resultado caso selecione não-->
+        </div>
         </div>
         <div id="avancar">
             <input type="button" value="Avançar" onclick="ativarForm()">
@@ -74,9 +77,22 @@
                 <input type="number" name="duracao" id="duracao">
             </p>
             <p>
-                Quantidade de dias em atividade:
+                Quantidade de dias em atividade (semanal):
                 <input type="number" name="dias" id="dias">
             </p>
+            <div id="res3">
+                Resultado:
+            </div>
+            <div id="calc3"> <!--calc3 antes do valores 2 por motivos de chapei-->
+            <input type="button" value="Calcular" onclick="calcularTDEE()">
+            </div>
+        </div>
+
+        </div>
+        <div id="dieta" style="display: none;">
+            <div id="intro">
+            <p>Dieta</p>
+            </div>
             <p>
                 Objetivo:
                 <select name="Objetivo" id="objetivo">
@@ -85,18 +101,6 @@
                     <option value="Ganhar Massa">Ganhar Massa</option>
                 </select>
             </p>
-            <div id="res3">
-                Resultado:
-            </div>
-        </div>
-            <div id="calc3"> <!--calc3 antes do valores 2 por motivos de chapei-->
-            <input type="button" value="Calcular" onclick="calcularTDEE()" style="display: none;">
-            </div>
-        </div>
-        <div id="dieta" style="display: none;">
-            <div id="intro">
-            <p>Dieta</p>
-            </div>
 
         </div>
                 
