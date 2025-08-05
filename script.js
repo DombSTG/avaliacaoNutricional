@@ -1,9 +1,9 @@
 /* Correções futuras
-    - Botão de calcular novamente
+    - Botão de voltar
     - Anti-burro no horario de treino
-    - Explicar melhor o resultado o TDEE
     - Se a frequencia é Sedentaria não abre as outras opções de digitação
     - Não sumir o botao e nao perder o formulário
+    - Independente da frequencia ele nao altera o resultado, trocar pra selecao perguntando se pratica atividade
 */
 
 // Função para converter a altura de metros para centímetros
@@ -64,6 +64,20 @@ function tmb() {
 
     }
 
+function ativarForm() {
+    let fativ = document.getElementsByName('ativ')
+    const res3 = document.getElementById('res3')
+
+    if (fativ[0].checked) {
+        document.getElementById('valores3').style.display = 'block'
+        document.getElementById('calc3').style.display = 'block'
+    } else if (fativ[1].checked) {
+        res3.innerHTML = `Seu gasto energético diário é <strong>${taxa.toFixed(2)}</strong> kcal (sem atividade física)`;
+        document.getElementById('dieta').style.display = 'block';
+        document.getElementById('calc3').style.display = 'none';
+    }
+}
+
 function calcularTDEE() {
     const frequencia = document.getElementById('freq');
     const tipo = document.getElementById('tipo');
@@ -72,10 +86,10 @@ function calcularTDEE() {
     const peso = parseFloat(document.getElementById('peso').value);
     const res3 = document.getElementById('res3');
     const dias = Number(document.getElementById('dias').value)
+    let fativ = document.getElementsByName('ativ')
     let taxa = tmb(); // Chama a função tmb para obter o TMB
 
-    if (frequencia.value.length <= 0 || 
-        tipo.value.length <= 0 || 
+    if (tipo.value.length <= 0 || 
         duracao <= 0 || 
         objetivo.value.length <= 0) {
         window.alert('[ERRO] Verifique os dados e tente novamente!');
@@ -106,15 +120,11 @@ function calcularTDEE() {
         tdee += 500; // Aumentar 500 kcal para ganho de massa
     }   
     
-    res3.innerHTML = `Com base em seu objetivo: <strong>${tdee.toFixed(2)}</strong> kcal`;
+    res3.innerHTML = `Seu gasto energético diário é <strong>${tdee.toFixed(2)}</strong> kcal`;
 
     document.getElementById('dieta').style.display = 'block';
     document.getElementById('calc3').style.display = 'none';
     
-
-
-
-
 }
 
 // Função do total de Calorias da Dieta

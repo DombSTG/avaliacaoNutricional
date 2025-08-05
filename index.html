@@ -49,15 +49,18 @@
         <div id="intro">
             <p>Gasto Calórico Total Diário</p>
         </div>
-        <div id="valores3"> <!--Valores 3 antes do valores 2 por motivos de chapei-->
-            <p>Frequencia de atividade física
-                <select name="freq" id="freq">
-                <option value="Sedentario">Sedentário</option>
-                <option value="Levemente ativo">Levemente ativo</option>
-                <option value="Moderadamente ativo">Moderadamente ativo</option>
-                <option value="Intenso">Intenso</option>
-                </select>
+        <div id="pratica">
+                <p> Pratica atividade fisica:
+                <input type="radio" name="ativ" id="sim" checked>
+                <label for="sim">Sim</label>
+                <input type="radio" name="ativ" id="nao">
+                <label for="nao">Não</label>
             </p>
+        </div>
+        <div id="avancar">
+            <input type="button" value="Avançar" onclick="ativarForm()">
+        </div>
+        <div id="valores3" style="display: none;"> <!--Valores 3 antes do valores 2 por motivos de chapei-->
             <p>
                 Tipo de atividade física:
                 <select name="Tipo" id="tipo">
@@ -87,7 +90,7 @@
             </div>
         </div>
             <div id="calc3"> <!--calc3 antes do valores 2 por motivos de chapei-->
-            <input type="button" value="Calcular" onclick="calcularTDEE()">
+            <input type="button" value="Calcular" onclick="calcularTDEE()" style="display: none;">
             </div>
         </div>
         <div id="dieta" style="display: none;">
