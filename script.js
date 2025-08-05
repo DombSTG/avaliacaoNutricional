@@ -125,25 +125,52 @@ function calcularTDEE() {
 
     document.getElementById('dieta').style.display = 'block';
     document.getElementById('calc3').style.display = 'none';
+    return tdee;
     
 }
 
 // Função do total de Calorias da Dieta
 function calcular() {
-    var prot = document.getElementById('txtproteinas');
-    var carb = document.getElementById('txtcarbo');
-    var gord = document.getElementById('txtg');
-    var res = document.getElementById('res1');
+    let tdee = calcularTDEE()
+    let peso = getElementById('peso')
+    let objetivo = getElementById('objetivo').value
+    let dieta = getElementById('escolhaDieta').value
 
-    if (prot.value.length == 0 || carb.value.length == 0 || gord.value.length == 0) {
-        window.alert('[ERRO] Verifique os dados e tente novamente!');
-    }   else {
-        var p = Number(prot.value);
-        var c = Number(carb.value);
-        var g = Number(gord.value);
-        var quatro = (p + c) * 4;
-        var resultado = quatro + (g * 9);
-        res.innerHTML = `O total de calorias é: <strong>${resultado}</strong> kcal`;
+    let calorias;
+    if (objetivo === "Perder Peso") {
+        calorias = tdee - (tdee * 20) // -20%
+    } else if (objetivo === "Manter Peso") {
+        calorias = tdee;
+    } else if(objetivo === "Ganhar Massa") {
+        calorias = tdee + (tdee * 0.15); // +15%
     }
+    
+    let gramasProteina;
+    if (dieta === "Padrão") {
+        gramasProteina = peso * 2.2;
+    } else {
+        gramasProteina = peso * 1.8;
+    }
+    
+    let kcalProteina = gramasProteina * 4 // Descobrindo calorias
+
+    // Conta de Gordura
+    let kcalGordura = calorias * 0.25;
+    let gramasGordura = kcalGordura / 9;
+
+    // Conta de Carbo
+    let kcalCarbo = calorias - (kcalProteina + kcalGordura);
+    let gramasCarbo = kcalCarbo / 4;
+
+    resultado.innerHTML = `
+  <p><strong>Calorias da dieta:</strong> ${calorias.toFixed(0)} kcal</p>
+  <p><strong>Proteínas:</strong> ${gramasProteina.toFixed(0)} g (${kcalProteina.toFixed(0)} kcal)</p>
+  <p><strong>Gorduras:</strong> ${gramasGordura.toFixed(0)} g (${kcalGordura.toFixed(0)} kcal)</p>
+  <p><strong>Carboidratos:</strong> ${gramasCarbo.toFixed(0)} g (${kcalCarbo.toFixed(0)} kcal)</p>
+`;
+
+
+
+
 }
 

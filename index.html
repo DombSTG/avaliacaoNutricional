@@ -101,6 +101,19 @@
                     <option value="Ganhar Massa">Ganhar Massa</option>
                 </select>
             </p>
+            <p>
+                Quer uma dieta padrão ou com mais proteinas?
+                <select name="dieta" id="escolhaDieta">
+                    <option value="padrao">Padrão</option>
+                    <option value="mais">Mais Proteinas</option>
+                </select>
+            </p>
+            <div id="res5">
+                Resultado:
+            </div>
+            <div id="calc5">
+                <input type="button" value="Calcular" onclick="calcular()">
+            </div>
 
         </div>
                 
@@ -108,33 +121,6 @@
 
 
 
-
-
-
-
-
-
-
-        <div id="valores2">
-            <p>
-                Quantidade de Proteinas (g):
-                <input type="number" name="txtproteinas" id="txtproteinas">
-            </p>
-            <p>
-                Quantidade de Carboidratos (g):
-                <input type="number" name="txtcarbo" id="txtcarbo">
-            </p>
-            <p>
-                Quantidade de Gordura (g):
-                <input type="number" name="txtg" id="txtg">
-            </p>
-        </div>
-        <div id="calc2">
-        <input type="button" value="Calcular" onclick="calcular()">
-        </div>
-        <div id="res2">
-            Resultado:
-        </div>
     </section>
     <footer>
         <p>&copy; CursoemVideo</p>
