@@ -65,6 +65,7 @@ function tmb() {
 
     }
 
+// Função para ativar o restante caso seja resposta sim
 function ativarForm() {
     let fativ = document.getElementsByName('ativ')
     const res4 = document.getElementById('res4')
@@ -80,6 +81,7 @@ function ativarForm() {
     }
 }
 
+// Calcular TDEE
 function calcularTDEE() {
     const frequencia = document.getElementById('freq');
     const tipo = document.getElementById('tipo');
@@ -170,7 +172,7 @@ function calcular() {
   <p><strong>Carboidratos:</strong> ${gramasCarbo.toFixed(0)} g (${kcalCarbo.toFixed(0)} kcal)</p>
 `;
 
-
+    document.getElementById('calc5').style.display = 'none'
 
 
 }
