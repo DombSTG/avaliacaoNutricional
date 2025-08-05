@@ -31,11 +31,12 @@ function converter() {
     }
 }
 
+    let peso;
 // Função para calcular o TMB (Taxa Metabólica Basal)
 function tmb() {
     var nome = document.getElementById('nome');
     var idade = document.getElementById('idade');
-    var peso = document.getElementById('peso');
+    peso = Number(document.getElementById('peso').value);
     var sexo = document.getElementById('sexo');
     var res1 = document.getElementById('res1');
 
@@ -43,7 +44,7 @@ function tmb() {
 
     if (nome.value.length <= 0 || 
         idade.value.length <= 0 || 
-        peso.value.length <= 0 || 
+        peso <= 0 || 
         sexo.value.length <= 0) {
         window.alert('[ERRO] Verifique os dados e tente novamente!');
         res1.innerHTML = 'Resultado:';
@@ -52,9 +53,9 @@ function tmb() {
 
     let resultado
     if ( sexo.value == 'Masculino') {
-        resultado = ((10 * Number(peso.value)) + (6.25 * alturaNum) - (5 * Number(idade.value)) + 5);
+        resultado = ((10 * Number(peso)) + (6.25 * alturaNum) - (5 * Number(idade.value)) + 5);
     } else {
-        resultado = ((10 * Number(peso.value)) + (6.25 * alturaNum) - (5 * Number(idade.value)) - 161);
+        resultado = ((10 * Number(peso)) + (6.25 * alturaNum) - (5 * Number(idade.value)) - 161);
     }
         res1.innerHTML = `Olá <strong>${nome.value}</strong>, seu TMB é: <strong>${resultado.toFixed(2)}</strong> kcal`;
     document.getElementById('gastoCalorico').style.display = 'block';
@@ -132,13 +133,13 @@ function calcularTDEE() {
 // Função do total de Calorias da Dieta
 function calcular() {
     let tdee = calcularTDEE()
-    let peso = getElementById('peso')
-    let objetivo = getElementById('objetivo').value
-    let dieta = getElementById('escolhaDieta').value
+    let objetivo = document.getElementById('objetivo').value
+    let dieta = document.getElementById('escolhaDieta').value
+    let res5 = document.getElementById('res5')
 
     let calorias;
     if (objetivo === "Perder Peso") {
-        calorias = tdee - (tdee * 20) // -20%
+        calorias = tdee - (tdee * 0.20) // -20%
     } else if (objetivo === "Manter Peso") {
         calorias = tdee;
     } else if(objetivo === "Ganhar Massa") {
@@ -162,7 +163,7 @@ function calcular() {
     let kcalCarbo = calorias - (kcalProteina + kcalGordura);
     let gramasCarbo = kcalCarbo / 4;
 
-    resultado.innerHTML = `
+    res5.innerHTML = `
   <p><strong>Calorias da dieta:</strong> ${calorias.toFixed(0)} kcal</p>
   <p><strong>Proteínas:</strong> ${gramasProteina.toFixed(0)} g (${kcalProteina.toFixed(0)} kcal)</p>
   <p><strong>Gorduras:</strong> ${gramasGordura.toFixed(0)} g (${kcalGordura.toFixed(0)} kcal)</p>
