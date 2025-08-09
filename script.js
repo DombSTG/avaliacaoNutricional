@@ -174,6 +174,6 @@ function calcular() {
 
     document.getElementById('calc5').style.display = 'none'
 
-
+    
 }
 
